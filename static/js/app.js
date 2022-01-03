@@ -8,7 +8,7 @@ function buildTable(data) {
   //next, loop through each object in the data 
   //and append a row and cells for each value in the row
   data.forEach((dataRow) => {
-      //Append a row to the tabke body
+      //Append a row to the table body
     let row = tbody.append("tr");
 
     //loop through each field in the dataRow and add
@@ -23,7 +23,9 @@ function buildTable(data) {
 function handleClick() {
     //grab the datetime value from the filter
     let date = d3.select("#datetime").property("value");
+    console.log(date);
     let filteredData = tableData;
+    console.log(filteredData);
     //check to see if a date was entered and filter the
     //data using the date
     if (date) {
