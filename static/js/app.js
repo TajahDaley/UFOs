@@ -1,13 +1,10 @@
 // import the data from data.js
 const tableData = data;
-
 // Reference the HTML table using d3
 var tbody = d3.select("tbody");
-
 function buildTable(data) {
     //First, clearout any existing data
-  tbody.html("")
-
+  tbody.html("");
   //next, loop through each object in the data 
   //and append a row and cells for each value in the row
   data.forEach((dataRow) => {
@@ -23,7 +20,6 @@ function buildTable(data) {
     );
   });
 }
-
 function handleClick() {
     //grab the datetime value from the filter
     let date = d3.select("#datetime").property("value");
@@ -35,13 +31,11 @@ function handleClick() {
         //rows where the datetime value matches the filter value
         filteredData = filteredData.filter(row => row.datetime === date);
     };
-
     //rebuild the table using the filtered data
     //@note:if tno date was entered, then filteredData will
     //just be the originl tableData.
     buildTable(filteredData);
 }
-
 //attach am evemt to listen for the form button
 d3.selectAll("#filter-btn").on("click", handleClick);
 
